@@ -134,14 +134,74 @@
   filter: brightness(3);
 }
 
-.activity-info > h1 {
+.activity-data-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.activity-data-container > h1 {
   color: white;
   font-size: 3rem;
   font-weight: 200;
 }
 
-.activity-info > h3 {
+.activity-data-container > h3 {
   color: var(--desaturated-blue);
   font-weight: 500;
   font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    height: unset;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .main-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-container {
+    height: 15rem;
+  }
+  .profile-image {
+    width: 5rem;
+    height: 5rem;
+  }
+  .profile-intro-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .profile-intro-text > h1 {
+    font-size: 1.5rem;
+  }
+  .display-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .filter-button {
+    font-size: 1.2rem;
+  }
+  .activity-card {
+    height: 15rem;
+  }
+  .activity-info {
+    display: flex;
+  }
+  .activity-data-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .activity-data-container > h1 {
+    font-size: 2rem;
+  }
 }

@@ -11,7 +11,7 @@ import selfCareIcon from "./assets/images/icon-self-care.svg";
 import ellipsisIcon from "./assets/images/icon-ellipsis.svg";
 
 function App() {
-  const [data, setData] = useState([
+  const data = [
     {
       title: "Work",
       bgColor: "hsl(15, 100%, 70%)",
@@ -126,7 +126,7 @@ function App() {
         },
       },
     },
-  ]);
+  ];
   const [activeFilter, setActiveFilter] = useState("weekly");
   return (
     <div className="wrapper">
@@ -186,16 +186,18 @@ function App() {
                 <span>{item.title}</span>
                 <img src={ellipsisIcon} alt="ellipsis" />
               </div>
-              <h1>{`${
-                item.timeframes[activeFilter as keyof typeof item.timeframes]
-                  .current
-              }hrs`}</h1>
-              <h3>{`Last ${
-                activeFilter === "daily" ? "Day" : activeFilter.slice(0, -2)
-              } - ${
-                item.timeframes[activeFilter as keyof typeof item.timeframes]
-                  .previous
-              }hrs`}</h3>
+              <div className="activity-data-container">
+                <h1>{`${
+                  item.timeframes[activeFilter as keyof typeof item.timeframes]
+                    .current
+                }hrs`}</h1>
+                <h3>{`Last ${
+                  activeFilter === "daily" ? "Day" : activeFilter.slice(0, -2)
+                } - ${
+                  item.timeframes[activeFilter as keyof typeof item.timeframes]
+                    .previous
+                }hrs`}</h3>
+              </div>
             </div>
           </div>
         ))}
